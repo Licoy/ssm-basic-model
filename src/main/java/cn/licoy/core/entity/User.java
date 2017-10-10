@@ -1,6 +1,8 @@
 package cn.licoy.core.entity;
 
+import com.baomidou.mybatisplus.annotations.TableName;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,6 +13,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
+@TableName(value = "user")
 public class User {
 
     private Integer id;

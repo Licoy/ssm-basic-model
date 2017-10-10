@@ -9,6 +9,21 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
+    <profiles>
+        <profile>
+            <id>jdk-1.8</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+                <jdk>1.8</jdk>
+            </activation>
+            <properties>
+                <maven.compiler.source>1.8</maven.compiler.source>
+                <maven.compiler.target>1.8</maven.compiler.target>
+                <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+            </properties>
+        </profile>
+    </profiles>
+
     <repositories>
         <repository>
             <id>central</id>
@@ -24,7 +39,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <!-- spring版本号 -->
         <spring.version>4.2.5.RELEASE</spring.version>
         <!-- mybatis版本号 -->
@@ -38,7 +54,7 @@
         <druid.version>1.1.4</druid.version>
         <!-- lombok版本号 -->
         <lombok.version>1.16.18</lombok.version>
-
+        <mybatis-plus.version>2.1.2</mybatis-plus.version>
     </properties>
     <dependencies>
 
@@ -114,19 +130,19 @@
             <artifactId>freemarker</artifactId>
             <version>2.3.20</version>
         </dependency>
-        <!-- 添加mybatis依赖 -->
+        <!--&lt;!&ndash; 添加mybatis依赖 &ndash;&gt;
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
             <version>${mybatis.version}</version>
         </dependency>
 
-        <!-- 添加mybatis/spring整合包依赖 -->
+        &lt;!&ndash; 添加mybatis/spring整合包依赖 &ndash;&gt;
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis-spring</artifactId>
             <version>1.2.2</version>
-        </dependency>
+        </dependency>-->
 
         <!-- 添加mysql驱动依赖 -->
         <dependency>
@@ -209,6 +225,17 @@
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus</artifactId>
+            <version>${mybatis-plus.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity</artifactId>
+            <version>1.7</version>
         </dependency>
 
 

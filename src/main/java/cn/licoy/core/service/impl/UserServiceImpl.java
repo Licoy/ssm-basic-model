@@ -19,6 +19,10 @@ public class UserServiceImpl implements UserService {
     private UserDao userDao;
 
     public List<User> list() {
-        return userDao.list();
+        return userDao.selectList(null);
+    }
+
+    public User findByName(String name){
+        return userDao.selectOne(User.builder().name(name).build());
     }
 }
